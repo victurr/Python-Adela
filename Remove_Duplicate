@@ -1,0 +1,14 @@
+def remove_duplicates(String):
+    if String.isalpha():
+        string_into_a_list = [each for each in String.lower()]
+        make_string_into_a_list = string_into_a_list
+        list_set = list(set(make_string_into_a_list))
+        new_String = ''.join(sorted(list_set))
+        if len(new_String) > len(String):
+            dropped_char = len(new_String) - len(String)
+            return (new_String, dropped_char)
+        else:
+            dropped_char = len(String) - len(new_String)
+            return (new_String, dropped_char)
+    else:
+      raise TypeError('argument not an alphabet')
