@@ -1,0 +1,10 @@
+def solution(A):
+    result = 0
+    for value in range(0,len(A)): #...looping through the List...
+        if 1 < (len(str(A[value]))) < 4: #select numbers with 3 & 2 Chars.
+            if A[value] < 0: #if this is TRUE then it's a negative number. The negative sign PROBABLY made it pass the prev test.
+                if (len(str(A[value]))) > 2: #If this is TRUE then it's a negative integer in TENS(A unit of two Chars).
+                    result += A[value]
+            if A[value] > 0 and (len(str(A[value]))) < 3:
+                result += A[value]
+    return result
